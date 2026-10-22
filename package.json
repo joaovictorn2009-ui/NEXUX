@@ -1,0 +1,17 @@
+{
+  "name": "nexus-control",
+  "private": true,
+  "version": "0.1.0",
+  "description": "NEXUS CONTROL — central de gestão e monitoramento de sites",
+  "workspaces": ["apps/*"],
+  "engines": { "node": ">=20" },
+  "overrides": { "rollup": "npm:@rollup/wasm-node@^4.0.0" },
+  "scripts": {
+    "api:dev": "npm run dev -w @nexus/api",
+    "api:test": "npm run test -w @nexus/api",
+    "web:build": "npm run build:web -w @nexus/desktop",
+    "desktop:dev": "npm run dev -w @nexus/desktop",
+    "desktop:dist": "npm run dist -w @nexus/desktop",
+    "typecheck": "npm run typecheck -w @nexus/api && npm run typecheck -w @nexus/desktop"
+  }
+}
